@@ -1,0 +1,47 @@
+<div class="bootstrap-wrapper">
+    <div class="container mt">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="container text-center">
+                    <img class="img-fluid" 
+                    style="width: 100px;" 
+                    src="https://png.pngtree.com/png-clipart/20190516/original/pngtree-vector-lock-icon-png-image_4267534.jpg" />
+                </div>
+                <h1 class="text-center">Login Here !!</h1>
+
+                <form (ngSubmit)="onSubmit()">
+                    <mat-form-field class="full-width">
+                        <mat-label>Username</mat-label>
+                        <input 
+                        [(ngModel)]="credentials.username"
+                        required
+                        name="username" 
+                        type="text" matInput/>
+                    </mat-form-field>
+                    <mat-form-field class="full-width">
+                        <mat-label>Password</mat-label>
+                        <input 
+                        [(ngModel)]="credentials.password"
+                        name="password"
+                        type="password" matInput/>
+                    </mat-form-field>
+
+                    <div class="container text-center">
+                        <button type="button" style="margin-left: 10px;" mat-raised-button color="black"> 
+                            <a [routerLink]="['/register']" routerLinkActive="active">Register</a>
+                        </button>
+                        <button type="submit" style="margin-left: 10px" mat-raised-button color="primary">  Login
+                                            </button>
+                        <button style="margin-left: 10px" type="reset" mat-raised-button color="accent">Reset</button>
+                         
+                         
+
+                    </div>
+                </form>
+            </div>
+        
+        </div>
+
+    </div>
+</div>
+

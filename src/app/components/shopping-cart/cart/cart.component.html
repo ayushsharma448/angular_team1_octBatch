@@ -1,0 +1,20 @@
+<div *ngIf="cartItems.length=== 0" class="alert alert-info">Cart Items</div>
+<ul *ngIf="cartItems.length > 0" class="alert alert-info">
+  <strong>My Cart!!!</strong>
+</ul>
+<ul *ngIf="cartItems.length > 0" class="list-group">
+    
+    <li class="list-group-item" *ngFor="let item of cartItems" style="display: flex; background-color: beige; ">
+      <app-cart-item [cartItem]="item" ></app-cart-item >    
+     <button mat-icon-button color="warn" aria-label="Example icon button with a heart icon"  (click)="removeItemCart(item,$event)">
+      <mat-icon>remove_circle</mat-icon>
+    </button>
+    </li>
+    <li class="list-group-item ">
+       <strong>Total</strong> {{cardTotal | currency:'INR'}}
+    </li>
+    <li class="list-group-item " style="display: flex;">
+    <button type="button" class="btn btn-secondary" (click)="clearAllCart()">Clear Cart</button>
+    <button type="button" class="btn btn-primary" (click)="successOrder()">Buy Now</button>  
+</li>
+</ul>
